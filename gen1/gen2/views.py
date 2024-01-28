@@ -47,3 +47,6 @@ def register(request):
         
 def music(request):
        return render(request,'music.html')
+
+def events(request):
+       return render(request,'events.html')

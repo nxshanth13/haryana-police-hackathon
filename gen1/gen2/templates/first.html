@@ -108,7 +108,7 @@
             <div class="mid">
                 <h3 class="hype">MISSION</h3>
                 <h3 class="hype">EXPLORE</h3>
-                <h3 class="hype">CONTACT US</h3>
+                <h3 class="hype"><a href="#contact">CONTACT US</a></h3>
             </div>
         </nav>
         <div class="slider">
@@ -126,8 +126,8 @@
                     <img src="{% static 'images/slide4.jpeg' %}" alt="4">
                 </div>
             </div>
-            <i class="fa fa-chevron-left prev"></i>
-            <i class="fa fa-chevron-right next"></i>
+            <i class="fa-solid fa-arrow-left prev"></i>
+            <i class="fa-solid fa-arrow-right next"></i>
         </div>
         {%if not user %}
         <div class="links">
@@ -267,7 +267,7 @@
             <div class="grid-container">
                 <div class="grid-item">
                     <img src="{% static 'images/image.png' %}" />
-                    <a href="/music">Podcast</a>
+                    <a href="/podcast">Podcast</a>
                     <p>Listen to us</p>
                 </div>
                 <div class="grid-item">
@@ -292,7 +292,7 @@
                 </div>
                 <div class="grid-item">
                     <img src="{% static 'images/image.png' %}" />
-                    <a href="./notifications">Notifications</a>
+                    <a href="/events">Notifications</a>
                     <p>Stay Informed, Stay Empowered – Explore the latest updates and notifications!</p>
                 </div>
                 <div class="grid-item">
@@ -302,7 +302,34 @@
                 </div>
             </div>
         </div>
-
+        <div class="container" id="contact">
+            <div class="card">
+                <div class="left">
+                <img src="{% static 'images/contact.png' %}" style="mix-blend-mode: multiply; object-fit: contain;height: 100%;width: 100%;">
+                </div>
+                <div class="right">
+                <h2>Contact Us</h2>
+                <div class="contact">
+                    <div class="form-container">
+                    <form class="form">
+                        <div class="username">
+                        <input type="text" placeholder="Enter your Name">
+                        </div>
+                        <div class="useremail">
+                        <input type="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="usermessage" style="resize:none;">
+                        <textarea placeholder="Enter your message" required></textarea>
+                        </div>
+                        <div class="usersubmit">
+                        <input type="submit" value="Contact Us">
+                        </div>
+                    </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
         <footer style="width: 100%;">
             <div class="footer-container">
               <div class="col">

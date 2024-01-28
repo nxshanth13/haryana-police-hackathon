@@ -5,5 +5,6 @@ urlpatterns = [
     path('home',views.index),
     path('register',views.register),
     path('login',views.login),
-    path('music',views.music),
+    path('podcast',views.music),
+    path('events',views.events),
 ]
