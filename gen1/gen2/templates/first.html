@@ -102,7 +102,7 @@
     </style>
 </head>
 <body>
-    <div class="whole_container">
+    <div class="whole_container" style="position: relative;">
         <nav class="navbar">
             <img src="{% static 'images/logo.jpeg' %}" class="logo">
             <div class="mid">
@@ -132,9 +132,95 @@
         <div class="links">
             <h2>Become a member</h2>
             <div class="ls">
-                <button>Login</button>
-                <button>Signup</button>
+                <button id="openLogin">Login</button>
+                <button id="openPopup">Signup</button>
+
+                <!--Login Content-->
+    
+                <div id="loginContent">
+                    <div class="center-form">
+                        <form class="loginform" method="post">
+                            <h2 style="font-family: 'Poppins';">Login Here!</h2>
+                            <div class="form-group">
+                                <label for="username">Email:</label>
+                                <input type="text" id="username" name="user" required class="form-text">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" id="password" name="password" required class="form-password">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="form-submit">
+                            </div>
+                            <br />
+                            <a class="grey-link" ng-click="switchToLogin()">New Here? Signup</a>
+                        </form>
+                    </div>
+                </div>
+
+                <script>
+                    document.getElementById("openLogin").addEventListener("click", function() {
+                    document.getElementById("loginContent").style.display = "flex";
+                    });
+                
+                    document.getElementById("loginContent").addEventListener("click", function(event) {
+                    if (event.target === this) {
+                        this.style.display = "none";
+                    }
+                    });
+                </script>
+
+                <!--Register Content-->
+                
+                <div id="popupContainer">
+                    <div class="center-form">
+                        <form action="register" method="post">
+                            <h2 style="font-family: 'Poppins';">Join Us!</h2>
+                            <div class="form-group">
+                                <label for="registerEmail" style="font-family: 'Poppins';">Email:</label>
+                                <input
+                                    type="text"
+                                    name="email"
+                                    id="registerEmail"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="registerPassword" style="font-family: 'Poppins';">Password:</label>
+                                <input
+                                    type="password"
+                                    name="password"
+                                />
+                            </div>
+                            <input type="submit" id="submit" class="form-submit"/> <br />
+                            <a class="grey-link" ng-click="switchToLogin()">Already a member? Log in</a>
+                        </form>
+                        <div class="modal-register-post" style="display: none">
+                            <h1>Success!</h1>
+                            Your account has been created! You can now add items to your wishlist.<br/><button
+                            class="button"
+                            ng-click="close('Cancel');"
+                            >
+                            Finish
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    document.getElementById("openPopup").addEventListener("click", function() {
+                    document.getElementById("popupContainer").style.display = "flex";
+                });
+                
+                document.getElementById("popupContainer").addEventListener("click", function(event) {
+                    if (event.target === this) {
+                    this.style.display = "none";
+                    }
+                });
+                </script>
             </div>
+        </div>
+        <div class="cont">
+            <img src="{% static 'images/glimps.jpeg' %}" alt="" style="mix-blend-mode: multiply;margin-bottom: 30px;">
         </div>
         <div class="options-container">
             <div class="grid-container">
@@ -177,10 +263,6 @@
             <div class="footer">
                 
             </div>
-        </div>
-    
-        <div class="cont">
-            <img src="{% static 'images/i/glimps.jpeg' %}" alt="" style="mix-blend-mode: multiply;margin-bottom: 100px;margin-top: -80px;">
         </div>
     </div>
 
