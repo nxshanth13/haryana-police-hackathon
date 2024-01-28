@@ -44,3 +44,6 @@ def register(request):
                                 return render(request,'first.html',{'user':user,'error_message':'Paaword error'})
         except:
                return render(request,'first.html',{'user':user})
+        
+def music(request):
+       return render(request,'music.html')

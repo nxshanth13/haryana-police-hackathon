@@ -81,6 +81,115 @@ body{
     padding: 5px;
     width: 100px;
 }
+#openLogin {
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: normal;
+  margin: 0;
+  height: 50px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+#openLogin:disabled {
+  pointer-events: none;
+}
+#openLogin:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+#openLogin:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+#openPopup {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #3B3B3B;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  height: 50px;
+  min-width: 0;
+  outline: none;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+#openPopup:disabled {
+  pointer-events: none;
+}
+#openPopup:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+#openPopup:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.hype {
+  display: inline-block;
+  position: relative;
+  color: rgb(228, 26, 77);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.hype::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(228, 26, 77);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hype:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
 
 .links{
     margin-top:30px;
@@ -152,3 +261,242 @@ body{
     width: 100px;
     height: 30px;
 }
+
+
+
+
+/* footer start */
+footer{
+    font-family: "Poppins",sans-serif;
+  }
+  .footer-container {
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    background-color: rgb(6, 16, 37);
+  }
+  
+  .footer-side-col{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 80%;
+  }
+  
+  .footer-side-col > .col{
+    padding: 2.5rem;
+    flex-wrap: nowrap;
+  }
+  
+  .footer-container > .col {
+    padding: 2.5rem;
+    flex-basis: 20%;
+    color: white;
+  }
+  
+  .footer-container .col a:hover,
+  footer a:focus {
+    color: cyan;
+  }
+  
+  @media (max-width: 1120px){
+    .footer-side-col{
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: repeat(2,1fr);
+    }
+  }
+  
+  @media (max-width: 730px) {
+    .footer-container {
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+  
+    .footer-container .col {
+      padding: 2rem;
+      flex-basis: 31%;
+    }
+  
+    .footer-container p {
+      color: white;
+      margin-top: 1rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .footer-side-col{
+      grid-template-columns: 1fr;
+      grid-template-rows: minmax(auto,auto);
+    }
+  
+    .footer-container .col {
+      padding: 1rem;
+      flex-basis: 100%;
+    }
+  }
+  
+  .footer-container .col a {
+    display: inline-block;
+    position: relative;
+    color: white;
+  }
+  
+  .footer-container .col ul li a:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: cyan;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .footer-container .col ul li a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .footer-container p {
+    color: white;
+  }
+  
+  .footer-container .col ul li a:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: cyan;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .footer-container .col ul li a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .footer-container p {
+    margin-top: 0.5rem;
+  }
+  .footerpara{
+    margin-left: -10px;
+  }
+  
+  .footer-container .col .email-id {
+    word-wrap: break-word;
+    text-decoration: underline;
+  }
+  
+  .email-id a{
+    text-decoration: none;
+    color: white;
+  }
+  .footer-container .col h3 {
+    color: rgb(228, 26, 77);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    font-family: "Ubuntu",sans-serif;
+  }
+  
+  .footer-container .col img {
+    display: block;
+    margin: 0 auto;
+    width: 140px;
+    cursor: pointer;
+  }
+  .footer-container .col .footerheading {
+    display: flex;
+    color:white ;
+    margin-top: 0.5px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .footer-container .col .footerpara {
+    display: flex;
+    margin-top: -19px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    letter-spacing: 4px;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .fab:hover {
+    text-decoration: none;
+  }
+  
+  .footer-container .col .sukoon {
+    color: rgb(30, 240, 191);
+    letter-spacing: 5px;
+  }
+  
+  .footer-container .col .social-menu ul {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .footer-container .col .social-menu ul a {
+    color: white;
+  }
+  .footer-container .col .social-menu ul a li{
+    transition: transform 250ms ease-out;
+  }
+  
+  .footer-container .col .social-menu ul a li:hover {
+    transform: scale(1.4) !important;
+    text-decoration: none !important;
+  }
+  .footer-container .col .social-menu ul a li#social-twitter:hover{
+    color: 	#1DA1F2;
+  }
+  .footer-container .col .social-menu ul a li#social-github{
+    transition: transform  250ms ease-out, color 250ms ease-out, padding 250ms ease-out !important;
+  }
+  .footer-container .col .social-menu ul a li#social-github:hover{
+    transform: scale(1.2) !important;
+    color:black;
+    background-color: whitesmoke;
+    padding: 2px 2px 0px 2px;
+    border-radius: 25px;
+  }
+  .footer-container .col .social-menu ul a li#social-linkedin:hover{
+    color: #0A66C2;
+  }
+  .footer-container .col ul li {
+    list-style-type: none;
+    text-align: left;
+    margin-top: 0.5rem;
+  }
+  .footer-container .col ul li a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  @media screen and (max-width: 600px) {
+    
+    .footer-container .col ul li {
+      text-align: center;
+    }
+  
+    .footer-container {
+      text-align: center;
+    }
+  
+    .footer-container .col .social-menu ul {
+      justify-content: center;
+    }
+  }
+  
+  .footercontent{
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+  }

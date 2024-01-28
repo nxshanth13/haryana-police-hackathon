@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{% static 'style/first.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Mynerve&family=Poppins:wght@100;500&family=Plus+Jakarta+Sans:wght@300&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Mynerve&family=Poppins:wght@100;200;300;500&family=Plus+Jakarta+Sans:wght@300&family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -106,9 +106,9 @@
         <nav class="navbar">
             <img src="{% static 'images/logo.jpeg' %}" class="logo">
             <div class="mid">
-                <h3>Home</h3>
-                <h3>Mission</h3>
-                <h3>Join Us</h3>
+                <h3 class="hype">MISSION</h3>
+                <h3 class="hype">EXPLORE</h3>
+                <h3 class="hype">CONTACT US</h3>
             </div>
         </nav>
         <div class="slider">
@@ -173,11 +173,14 @@
                         this.style.display = "none";
                     }
                     });
-                    document.addEventListener('DOMContentLoaded', function () {
-                        var errorMessage = "{{ error_message }}";
-                        var passwordError = document.getElementById('password-error1');
-                        alert(errorMessage)
-                    });
+
+                    if(event.target === this){
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var errorMessage = "{{ error_message }}";
+                            var passwordError = document.getElementById('password-error1');
+                            alert(errorMessage)
+                        });
+                    }
                 </script>
 
                 <!--Register Content-->
@@ -245,11 +248,13 @@
                     this.style.display = "none";
                     }
                 });
-                document.addEventListener('DOMContentLoaded', function () {
-                    var errorMessage = "{{ error_message }}";
-                    var passwordError = document.getElementById('password-error');
-                    alert(errorMessage)
-                });
+                if(event.target === this){
+                    document.addEventListener('DOMContentLoaded', function () {
+                        var errorMessage = "{{ error_message }}";
+                        var passwordError = document.getElementById('password-error');
+                        alert(errorMessage)
+                    });
+                }
                 </script>
 
             </div>
@@ -262,7 +267,7 @@
             <div class="grid-container">
                 <div class="grid-item">
                     <img src="{% static 'images/image.png' %}" />
-                    <a href="./rpg/">Podcast</a>
+                    <a href="/music">Podcast</a>
                     <p>Listen to us</p>
                 </div>
                 <div class="grid-item">
@@ -296,10 +301,56 @@
                     <p>Shape Your Community – Assign user roles in to empower and uplift the community.</p>
                 </div>
             </div>
-            <div class="footer">
-                
-            </div>
         </div>
+
+        <footer style="width: 100%;">
+            <div class="footer-container">
+              <div class="col">
+                <img src="{% static 'images/logo.jpeg' %}" alt="logo" class="footlogo" />
+              </div>
+        
+              <div class="footer-side-col">
+                <div class="col">
+                  <h3>
+                    Location
+                    <div class="underline"><span></span></div>
+                  </h3>
+                  <p>India la dhan</p>
+                  <p class="email-id"><a href="mailto:suk00n794@gmail.com">temp@gmail.com</a></p>
+                </div>
+        
+                <div class="col">
+                  <h3>Links</h3>
+                  <ul>
+                    <li><a href="">About Us</a></li>
+                    <li>
+                      <a href="">Privacy Policy</a>
+                    </li>
+                  </ul>
+                </div>
+        
+                <div class="col">
+                  <h3>
+                    Social
+                    <div class="underline"><span></span></div>
+                  </h3>
+                  <div class="social-menu">
+                    <ul>
+                      <a href="https://twitter.com/Suk00n9" target="_blank">
+                        <li id="social-twitter"><i class="fab fa-2x fa-twitter"></i></li>
+                      </a>
+                      <a href="https://github.com/AnkitArya0" target="_blank">
+                        <li id="social-github"><i class="fab fa-2x fa-github"></i></li>
+                      </a>
+                      <a href="https://www.linkedin.com/in/sukoon-9-4b8aa9278/" target="_blank">
+                        <li id="social-linkedin"><i class="fab fa-2x fa-linkedin-in"></i></li>
+                      </a>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </footer>
     </div>
 
     <!-- Slick JS -->
