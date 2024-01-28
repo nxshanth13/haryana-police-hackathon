@@ -129,6 +129,7 @@
             <i class="fa fa-chevron-left prev"></i>
             <i class="fa fa-chevron-right next"></i>
         </div>
+        {%if not user %}
         <div class="links">
             <h2>Become a member</h2>
             <div class="ls">
@@ -139,7 +140,8 @@
     
                 <div id="loginContent">
                     <div class="center-form">
-                        <form class="loginform" method="post">
+                        <form class="loginform" method="post" action='login'>
+                            {% csrf_token %}
                             <h2 style="font-family: 'Poppins';">Login Here!</h2>
                             <div class="form-group">
                                 <label for="username">Email:</label>
@@ -154,6 +156,9 @@
                             </div>
                             <br />
                             <a class="grey-link" ng-click="switchToLogin()">New Here? Signup</a>
+                            <div id="password-error1" style="color: red; display:none">
+                                {{ error_message }}
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -168,6 +173,11 @@
                         this.style.display = "none";
                     }
                     });
+                    document.addEventListener('DOMContentLoaded', function () {
+                        var errorMessage = "{{ error_message }}";
+                        var passwordError = document.getElementById('password-error1');
+                        alert(errorMessage)
+                    });
                 </script>
 
                 <!--Register Content-->
@@ -175,8 +185,16 @@
                 <div id="popupContainer">
                     <div class="center-form">
                         <form action="register" method="post">
+                            {% csrf_token %}
                             <h2 style="font-family: 'Poppins';">Join Us!</h2>
                             <div class="form-group">
+                                <label for="registerEmail" style="font-family: 'Poppins';">name:</label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    id="registerEmail"
+                                />
+                            </div><div class="form-group">
                                 <label for="registerEmail" style="font-family: 'Poppins';">Email:</label>
                                 <input
                                     type="text"
@@ -190,8 +208,19 @@
                                     type="password"
                                     name="password"
                                 />
+
+                            </div>
+                            <div class="form-group">
+                                <label for="registerPassword" style="font-family: 'Poppins';">Repeat Password:</label>
+                                <input
+                                    type="repassword"
+                                    name="repassword"
+                                />
                             </div>
                             <input type="submit" id="submit" class="form-submit"/> <br />
+                            <div id="password-error" style="color: red; display:none">
+                                {{ error_message }}
+                            </div>
                             <a class="grey-link" ng-click="switchToLogin()">Already a member? Log in</a>
                         </form>
                         <div class="modal-register-post" style="display: none">
@@ -216,9 +245,16 @@
                     this.style.display = "none";
                     }
                 });
+                document.addEventListener('DOMContentLoaded', function () {
+                    var errorMessage = "{{ error_message }}";
+                    var passwordError = document.getElementById('password-error');
+                    alert(errorMessage)
+                });
                 </script>
+
             </div>
         </div>
+        {% endif %}
         <div class="cont">
             <img src="{% static 'images/glimps.jpeg' %}" alt="" style="mix-blend-mode: multiply;margin-bottom: 30px;">
         </div>
