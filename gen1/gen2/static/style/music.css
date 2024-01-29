@@ -63,15 +63,15 @@ html{
 }
 
 body {
-  background-color: #040404;
+  background-color: #d0f1bfb3;
   font-family: "Inter", sans-serif;
   color: white;
 }
 
 header {
+  background-image: url('https://pbs.twimg.com/media/EWDZj8bU8AIFRMY?format=jpg&name=large');
   min-height: 100vh;
   width: 100%;
-  background-image: url("https://images.unsplash.com/photo-1610041321327-b794c052db27?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
   position: relative;
   background-position: center;
   background-size: cover;
@@ -270,6 +270,7 @@ hr {
   text-decoration: underline;
   text-underline-offset: 10px;
   margin: 3rem 0 2.5rem;
+  color: #000;
 }
 .container h2{
   color:rgb(98, 181, 65);
@@ -277,6 +278,8 @@ hr {
 .container,
 #podcasts > .collection {
   display: flex;
+  width: 70%;
+  margin: 0 auto;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;

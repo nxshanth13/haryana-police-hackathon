@@ -6,6 +6,21 @@
     font-weight: 500;
 }
 
+::-webkit-scrollbar{
+  background: white;
+  width: 0.4rem;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: rgba(173, 173, 173, 0.5);
+  border-radius: 10px;
+  transition: background-color 0.5s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(173, 173, 173, 0.8);
+}
+
 body{
     height: auto;
     width: 100vw;
@@ -25,11 +40,13 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 0 120px;
-    height: 10vh;
+    height: 7vh;
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #e5e3d4d7;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    background-image: url("https://pledge.mygov.in/fightagainstdrugabuse/assets/images/cloud-bg.png");
     margin-bottom: 10px;
     width: 100%;
 }
@@ -42,17 +59,16 @@ body{
     height: 50vh;
     width: 100%;
     position: relative;
-}
-.one-time{
+  }
+  .one-time{
     height: 100%;
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
 }
 .prev{
     position: absolute;
     cursor: pointer;
-    left: 20px;
-    margin-left: 10px;
+    left: 200px;
     top: 50%;
     font-size: larger;
 }
@@ -171,13 +187,13 @@ body{
   transform: translateY(0);
 }
 
-.hype {
+.hype , .hype a{
   display: inline-block;
   position: relative;
   color: rgb(228, 26, 77);
   cursor: pointer;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .hype::after {
@@ -273,7 +289,7 @@ body{
 
 .container {
     width: 100vw;
-    height: 100vh;
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -281,10 +297,10 @@ body{
   }
   
   .card {
-    background-color: #ddd;
+    background-color: #f1f1f15e;
     padding: 1rem;
     border-radius: 5px;
-    border: 1px solid #bbb;
+    border: 2px solid #000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -374,6 +390,13 @@ body{
 
 
 
+
+.waves{
+  background-image: url("https://pledge.mygov.in/fightagainstdrugabuse/assets/images/repetable-footer.png");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 40px;
+}
 
 /* footer start */
 

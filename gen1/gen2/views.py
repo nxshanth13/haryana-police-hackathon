@@ -55,3 +55,6 @@ def community(request):
        posts1=posts.objects.all()
        print(posts1)
        return render(request,'community.html',{'posts':posts1})
+
+def quiz(request):
+       return render(request,'quiz.html')
