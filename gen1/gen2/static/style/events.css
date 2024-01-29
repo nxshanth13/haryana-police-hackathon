@@ -191,7 +191,7 @@ body{
   justify-content: center;
 }
 .mid-event{
-  flex-basis: 70%;
+  flex-basis: 50%;
   height: 100%;
   width: 100%;
 }
@@ -210,6 +210,7 @@ body{
   flex-direction: column;
   align-items: flex-start;
   height: 100%;
+  flex-basis: 80%;
   justify-content: space-evenly;
   row-gap: 10px;
 }
