@@ -7,4 +7,5 @@ urlpatterns = [
     path('login',views.login),
     path('podcast',views.music),
     path('events',views.events),
+    path('community',views.community)
 ]

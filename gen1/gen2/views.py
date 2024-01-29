@@ -50,3 +50,8 @@ def music(request):
 
 def events(request):
        return render(request,'events.html')
+
+def community(request):
+       posts1=posts.objects.all()
+       print(posts1)
+       return render(request,'community.html',{'posts':posts1})

@@ -1,189 +1,465 @@
-{% load static %}
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style/events.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Mynerve&family=Poppins:wght@100;200;300;500&family=Plus+Jakarta+Sans:wght@300&family=Oswald:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Document</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
-
-        a{
-            text-decoration: none;
-        }
-        body {
-            background-color: #E5E3D4;
-        }
-
-        .options-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            /* align-items: center; */
-            min-height: 100vh;
-            background-size: cover;
-            padding: 40px 120px;
-            position: relative;
-        }
-        .options-container h1{
-            font-size: 5rem;
-            margin: 20px 0;
-            font-weight: 600;
-            margin-top: 10px;
-            font-family: Arial, Helvetica, sans-serif;
-            background: -webkit-linear-gradient(0deg, #D3315A, #00ADA9, #7D5F91, #EA872C);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .options-container .grid-container{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 20px;
-            margin-top: 30px;
-            width: 100%;
-            position: relative;
-        }
-        .options-container .grid-container .grid-item{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #6d809337;
-            box-shadow: 1px 1px 4px 0px rgba(255, 255, 255, 0.25);
-            background: linear-gradient(97deg, rgba(229, 212, 196, 0.50) 49.55%, rgba(179, 203, 217, 0.50) 100.33%);
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-        }
-        .options-container .grid-container .grid-item:hover{
-            transform: scale(1.05);
-            box-shadow: 1px 1px 4px 0px rgba(255, 255, 255, 0.25);
-        }
-        .options-container .grid-container .grid-item a{
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-top: 10px;
-            font-family: "Black Ops One", cursive;
-            background: -webkit-linear-gradient(0deg, #D3315A, #00ADA9, #7D5F91, #EA872C);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-attachment: fixed;
-        }
-        .options-container .grid-container .grid-item p{
-            font-size: 1rem;
-            font-weight: 500;
-            margin-top: 10px;
-            color: #4c4c4c9a;
-            font-weight: 600;
-            text-align: justify;
-            text-justify: inter-word;
-        }
-
-        @media screen and (max-width: 768px){
-            .options-container{
-                padding: 40px 20px;
-            }
-            .options-container h1{
-                font-size: 4rem;
-            }
-            .options-container .grid-container{
-                grid-template-columns: repeat(1, 1fr);
-            }
-            
-        }
-    </style>
+    <title>Memes Page</title>
+    <!-- IconScout CDN -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
 </head>
 <body>
-    <div class="whole_container" style="position: relative;">
-        <nav class="navbar">
-            <img src="{% static 'images/logo.jpeg' %}" class="logo">
-            <div class="mid">
-                <h3 class="hype">MISSION</h3>
-                <h3 class="hype">EXPLORE</h3>
-                <h3 class="hype">CONTACT US</h3>
+    <nav>
+        <div class="container">
+            <h2 class="logo">
+                GENZI BODHI
+            </h2>
+            <div class="search-bar">
+                <i class="uil uil-search"></i>
+                <input type="search" placeholder="Search for creators, inspirations, and projects">
             </div>
-        </nav>
-
-        <div class="post">
-            
+            <div class="create">
+                <label class="btn btn-primary" for="create-post">Create Post</label>
+                <div class="profile-photo">
+                    <img src="./images/profile-1.jpg" alt="">
+                </div>
+            </div>
         </div>
+    </nav>
 
-        <footer style="width: 100%;">
-            <div class="footer-container">
-              <div class="col">
-                <img src="{% static 'images/logo.jpeg' %}" alt="logo" class="footlogo" />
-              </div>
-        
-              <div class="footer-side-col">
-                <div class="col">
-                  <h3>
-                    Location
-                    <div class="underline"><span></span></div>
-                  </h3>
-                  <p>India la dhan</p>
-                  <p class="email-id"><a href="mailto:suk00n794@gmail.com">temp@gmail.com</a></p>
+    <!-------------------------------- MAIN ----------------------------------->
+    <main>
+        <div class="container">
+            <!----------------- LEFT -------------------->
+            <div class="left">
+                <a class="profile">
+                    <div class="profile-photo">
+                        <img src="./images/profile-1.jpg">
+                    </div>
+                    <div class="handle">
+                        <h4>USER 1</h4>
+                        <p class="text-muted">
+                            @username
+                        </p>
+                    </div>
+                </a>
+
+                <!----------------- SIDEBAR -------------------->
+                <div class="sidebar">
+                    <a class="menu-item active">
+                        <span><i class="uil uil-home"></i></span>
+                        <h3>Home</h3>   
+                    </a>
+                    <a class="menu-item">
+                        <span><i class="uil uil-compass"></i></span>
+                        <h3>Podcast</h3>
+                    </a>
+                    <a class="menu-item"  id="notifications">
+                        <span><i class="uil uil-bell"><small class="notification-count">9+</small></i></span>
+                        <h3>Notification</h3>
+                        <!--------------- NOTIFICATION POPUP --------------->
+                        <div class="notifications-popup">
+                            <div>
+                                <div class="profile-photo">
+                                    <img src="./images/profile-2.jpg">
+                                </div>
+                                <div class="notification-body">
+                                    <b>Keke Benjamin</b> joins the committee #PurePathPledge
+                                    <small class="text-muted">2 Days Ago</small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-photo">
+                                    <img src="./images/profile-3.jpg">
+                                </div>
+                                <div class="notification-body">
+                                    <b>John Doe</b> scheduled an Event-ZeroToleranceRally
+                                    <small class="text-muted">1 Hour Ago</small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-photo">
+                                    <img src="./images/profile-4.jpg">
+                                </div>
+                                <div class="notification-body">
+                                    <b>Marry Oppong</b> and <b>283 Others</b> liked your post
+                                    <small class="text-muted">4 Minutes Ago</small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-photo">
+                                    <img src="./images/profile-5.jpg">
+                                </div>
+                                <div class="notification-body">
+                                    <b>Doris Y. Lartey</b> commented on a post you are tagged in
+                                    <small class="text-muted">2 Days Ago</small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-photo">
+                                    <img src="./images/profile-6.jpg">
+                                </div>
+                                <div class="notification-body">
+                                    <b>Keyley Jenner</b> commented on a post you are tagged in
+                                    <small class="text-muted">1 Hour Ago</small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-photo">
+                                    <img src="./images/profile-7.jpg">
+                                </div>
+                                <div class="notification-body">
+                                    <b>Jane Doe</b> commented on your post
+                                    <small class="text-muted">1 Hour Ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <!--------------- END NOTIFICATION POPUP --------------->
+                    </a>
+                    <a class="menu-item" id="messages-notifications">
+                        <span><i class="uil uil-envelope-alt"><small class="notification-count">6</small></i></span>
+                        <h3>Messages</h3>
+                    </a>
+                    <a class="menu-item">
+                        <span><i class="uil uil-bookmark"></i></span>
+                        <h3>Quiz page</h3>
+                    </a>
+                    <a class="menu-item">
+                        <span><i class="uil uil-chart-line"></i></span>
+                        <h3>Memes</h3>
+                    </a>
+                    <a class="menu-item">
+                        <span><i class="uil uil-chart-line"></i></span>
+                        <h3>Upcoming Events</h3>
+                    </a>
+                    <a class="menu-item" id="theme">
+                        <span><i class="uil uil-palette"></i></span>
+                        <h3>Theme</h3>
+                    </a>
+                    <a class="menu-item">
+                        <span><i class="uil uil-setting"></i></span>
+                        <h3>Connect us!</h3>
+                    </a>
                 </div>
-        
-                <div class="col">
-                  <h3>Links</h3>
-                  <ul>
-                    <li><a href="">About Us</a></li>
-                    <li>
-                      <a href="">Privacy Policy</a>
-                    </li>
-                  </ul>
-                </div>
-        
-                <div class="col">
-                  <h3>
-                    Social
-                    <div class="underline"><span></span></div>
-                  </h3>
-                  <div class="social-menu">
-                    <ul>
-                      <a href="https://twitter.com/Suk00n9" target="_blank">
-                        <li id="social-twitter"><i class="fab fa-2x fa-twitter"></i></li>
-                      </a>
-                      <a href="https://github.com/AnkitArya0" target="_blank">
-                        <li id="social-github"><i class="fab fa-2x fa-github"></i></li>
-                      </a>
-                      <a href="https://www.linkedin.com/in/sukoon-9-4b8aa9278/" target="_blank">
-                        <li id="social-linkedin"><i class="fab fa-2x fa-linkedin-in"></i></li>
-                      </a>
-                    </ul>
-                  </div>
-                </div>
-              </div>
             </div>
-        </footer>
+
+            <!----------------- MIDDLE -------------------->
+            <div class="middle">
+                 <!----------------- STORIES -------------------->
+                <div class="stories">
+                    <div class="story">
+                        <div class="profile-photo">
+                            <img src="./images/profile-8.jpg">
+                        </div>
+                        <p class="name">Your Story</p>
+                    </div>
+                    <div class="story">
+                        <div class="profile-photo">
+                            <img src="./images/profile-9.jpg">
+                        </div>
+                        <p class="name">Lila James</p>
+                    </div>
+                    <div class="story">
+                        <div class="profile-photo">
+                            <img src="./images/profile-10.jpg">
+                        </div>
+                        <p class="name">Winnie Haley</p>
+                    </div>
+                    <div class="story">
+                        <div class="profile-photo">
+                            <img src="./images/profile-11.jpg">
+                        </div>
+                        <p class="name">Daniel Bale</p>
+                    </div>
+                    <div class="story">
+                        <div class="profile-photo">
+                            <img src="./images/profile-12.jpg">
+                        </div>
+                        <p class="name">Jane Doe</p>
+                    </div>
+                    <div class="story">
+                        <div class="profile-photo">
+                            <img src="./images/profile-13.jpg">
+                        </div>
+                        <p class="name">Tina White</p>
+                    </div>
+                </div>
+                <!----------------- END OF STORIES -------------------->
+                <form action="" class="create-post">
+                    <div class="profile-photo">
+                        <img src="./images/profile-1.jpg">
+                    </div>
+                    <input type="text" placeholder="What's on your mind, Diana ?" id="create-post">
+                    <input type="submit" value="Post" class="btn btn-primary">
+                </form>
+                <!----------------- FEEDS -------------------->
+                <div class="feeds">
+                    <!----------------- FEED 1 -------------------->
+                    {% for pos in posts %}
+                    <div class="feed">
+                        <div class="head">
+                            <div class="user">
+                                <div class="profile-photo">
+                                    <img src="./images/profile-13.jpg">
+                                </div>
+                                <div class="info">
+                                    <h3>{{pos.uploader}}</h3>
+                                    <small>{{pos.location}}, {{pos.time}}</small>
+                                </div>
+                            </div>
+                            <span class="edit">
+                                <i class="uil uil-ellipsis-h"></i>
+                            </span>
+                        </div>
+
+                        <div class="photo">
+                            <img src="{{pos.file.url}}">
+                        </div>
+
+                        <div class="action-buttons">
+                            <div class="interaction-buttons">
+                                <span><i class="uil uil-heart"></i></span>
+                                <span><i class="uil uil-comment-dots"></i></span>
+                                <span><i class="uil uil-share-alt"></i></span>
+                            </div>
+                            <div class="bookmark">
+                                <span><i class="uil uil-bookmark-full"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="liked-by">
+                            <span><img src="./images/profile-10.jpg"></span>
+                            <span><img src="./images/profile-4.jpg"></span>
+                            <span><img src="./images/profile-15.jpg"></span>
+                            <p>Liked by <b>Ernest Achiever</b> and <b>2, 323 others</b></p>
+                        </div>
+
+                        <div class="caption">
+                            <p><b>{{pos.uploader}}</b> {{pos.desc}} 
+                            <span class="harsh-tag">#lifestyle</span></p>
+                        </div>
+
+                        <div class="comments text-muted">
+                            View all 277 comments
+                        </div>
+                    
+                      </div>
+                    <!----------------- END OF FEED 1 -------------------->
+                    {% endfor %}
+                </div>
+                <!----------------- END OF FEEDS -------------------->
+            </div>
+             <!----------------- END OF MIDDLE -------------------->
+
+            <!----------------- RIGHT -------------------->
+            <div class="right">
+                <!------- MESSAGES ------->
+                <div class="messages">
+                    <div class="heading">
+                        <h4>Messages</h4>
+                        <i class="uil uil-edit"></i>
+                    </div>
+                    <!------- SEARCH BAR ------->
+                    <div class="search-bar">
+                        <i class="uil uil-search"></i>
+                        <input type="search" placeholder="Search messages" id="message-search">
+                    </div>
+                    <!------- MESSAGES CATEGORY ------->
+                    <div class="category">
+                        <h6 class="active">Primary</h6>
+                        <h6>General</h6>
+                        <h6 class="message-requests">Requests (7)</h6>
+                    </div>
+                    <!------- MESSAGES ------->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="./images/profile-17.jpg">
+                        </div>
+                        <div class="message-body">
+                            <h5>Narendra Modi</h5>
+                            <p class="text-muted">Sabka Saath Sabka Vikas</p>
+                        </div>
+                    </div>
+                    <!------- MESSAGES ------->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="https://img.etimg.com/thumb/msid-99605400,width-650,height-488,imgsize-28124,resizemode-75/priyanka-chopra-jonas.jpg">
+                        </div>
+                        <div class="message-body">
+                            <h5>Priyanka Chopra</h5>
+                            <p class="text-bold">Escape reality with a strong mind, not drugs. </p>
+                        </div>
+                    </div>
+                    <!------- MESSAGES ------->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="./images/profile-8.jpg">
+                            <div class="active"></div>
+                        </div>
+                        <div class="message-body">
+                            <h5>Andrew Tate</h5>
+                            <p class="text-muted">Welcome to the real world!!</p>
+                        </div>
+                    </div>
+                    <!------- MESSAGES ------->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="https://static01.nyt.com/images/2021/06/29/world/29nkorea-1/29nkorea-1-mediumSquareAt3X.jpg">
+                        </div>
+                        <div class="message-body">
+                            <h5>Kim Jong Un</h5>
+                            <p class="text-muted">나는 당신을 지지한다</p>
+                        </div>
+                    </div>
+                    <!------- MESSAGES ------->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="https://s.ndtvimg.com/images/entities/300/ms-dhoni-700.png">
+                            <div class="active"></div>
+                        </div>
+                        <div class="message-body">
+                            <h5>MS Dhoni
+</h5>
+                            <p class="text-bold">5 new messages</p>
+                        </div>
+                    </div>
+                    <!------- MESSAGES ------->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRaT2WozXdM9ChvdlD38Wp0--s6sgOqG4lbgwvrO5Ou16gUzNsE">
+                        </div>
+                        <div class="message-body">
+                            <h5>Dwayne Johnson</h5>
+                            <p class="text-muted">haha got that!</p>
+                        </div>
+                    </div>
+                </div>
+                <!------- END OF MESSAGES ------->
+
+                <!------- FRIEND REQUEST ------->
+                <div class="friend-requests">
+                    <h4>Requests</h4>
+                    <div class="request">
+                        <div class="info">
+                            <div class="profile-photo">
+                                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAFwAXAMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAADAgQFBgcBAP/EADIQAAEDAgQEBQIFBQAAAAAAAAEAAgMEEQUSITEGE0FRIjJhcZGBoQczQlKxFCOiwfH/xAAZAQADAQEBAAAAAAAAAAAAAAAAAQQDAgX/xAAdEQACAgIDAQAAAAAAAAAAAAAAAQIRAyESEzEE/9oADAMBAAIRAxEAPwDEyBdJ0XX7lJQcoW03cABrdLfn5oadLFdogBUNLthqrRh+COqyyYt82w6rmUkjuEOXhauHOHaOrw2Kqq6ZpleLnsfVOavhDC6jTkFnq0qxYVTmnoIo3gAtbayVI4XIablQObs9GOONU0UGTgIwzc2kq7WNwC1VjiTCqzDqtslS1pZIbCRo0JWumRwdZwULxXStxDBKuHIMwYXsNv1N1H8LWGWV7M8mCNaMkulgoR0cvc3KFWQBhql2TdspslNebIoLG7r3XEZzAhljRu5MSJHAcNmxOsDIcuVpAeXG179PfQ/C1DDqF0EsVgMl/hUXgKpZDi4hJ85Dm37gH/RPwtHp3PFOx8pdzb+NpFsp7D0UmaT5UX/PCPCyWfKcmnbuoTFMQMBYWCYl7xGOVFcZjtupJr2vYc5sO6Z1b3SAhpAt+ojZYJ72UtOtDXD6yqqaeaVzgY47i7hY3G6YDiDn8tkkMbIahhdGJHWMjdtOnQqXgFPBRcuB+bP43EnVxPVQ0FDFBTTx1DWvjjBdE92pa3e30K7i0ZzTSMzmDBI8R6szHKe4vohEAoscd2t9kvk+qts85oakWXQ6ycPgKEYjdNM4aBvvfdIITxmRg8WqIx0T9C1FjSGtHNLTzxzwOLZI3ZmuHQrXMKqZqvD6aslysbJHd0YBOve/z8rNaenhdNGHD+3mGf26rXqmh/ojJTtaBG0+C22Xpb6LDN4iv5nTYljs0ZGlk0xBrpYXRMNswsSOgXo35HZShSuM0mUPMbNyQNSp6LL0QYxqWB8zQGCNlo4xlG+upuhYhWzO4YqZagjmyNyjKLeY20+l1IzUzTIWh8xafW1/sq7xlVNjgpaGMk2Oc+w0H8n4WsabVE+RuKdsr1JA+TQIjqV4kAzJNLKY9QUo1R5oJ2CoJAssEcbSXP6KOLhfQp1XSCVrQCmOQjdOJnNi3C41XgAHBo+q8TZeZfPfuujlEpTFoIBWzcF1EXFXDwonvaMUoGBgLj+ZH+k/Tb/qxDMQdOinuHMbqcGxGmxCjfllide3Rw6tPoQuWrRrGTi7RfsSw2WCR0crXse06g6KFnqxQ+c5vQrXaWtwXi3h8YnIGsiawmVznWdAQLuufT7qjfhuMD4uxPEXmB8gontMTZbWfG4nK4jv4dlj07KO/RSMQx99EyN89PLGJml0V22zDa/sqTXVUtZUvnmN3OPwOyuX4pVseI8W4gIcvIpnCmiy7WYAD/kXfCo+R1jlOo3BW0YKPhhPI5enWuLtAl5mjzboDJTG7axXJHZjdOjgPzRa6SJL9EC6W12iZyyRa1vYIT2Nc9zRoRqEpjr2SJPDM13cWSGFj1FyiRnKfRCzBt7mwXmy5/K05f3Hr7IGSZx7EaTA67DKWcspqzLz2dwD09+vorL+DOMxYLWYnUSytDf6GRzmbHMzxD7NcqTmHVM+Y+kmk5Ti1ssZYbdWncJgSVRI97nPmdmle4yPPdzjc/cqOkOWX3RxJmYCf2hNajoR3QAWWNrwmj2FnsnjTdqBKc0d+xQIAlJIS7FADyI+ALk7tG6dVyLyfVdeSG3G4QKxZ1tcL2ZDabtBXUDCX0TepILQ0ea+iKTomwN5237oCw7tAB2Q3tuzRKcdCkt8oQB2J12W6jRCIJjt0G/uiybeqQfyT7pisDsijZDOy6CbIBn/2Q==">
+                            </div>
+                            <div>
+                                <h5>Hail Hitler</h5>
+                                <p class="text-muted">8 mutual friends</p>
+                            </div>
+                        </div>
+                        <div class="action">
+                            <button class="btn btn-primary">
+                                Accept
+                            </button>
+                            <button class="btn">
+                                Decline
+                            </button>
+                        </div>
+                    </div>
+                    <div class="request">
+                        <div class="info">
+                            <div class="profile-photo">
+                                <img src="./images/profile-18.jpg">
+                            </div>
+                            <div>
+                                <h5>Edelson Mandela</h5>
+                                <p class="text-muted">2 mutual friends</p>
+                            </div>
+                        </div>
+                        <div class="action">
+                            <button class="btn btn-primary">
+                                Accept
+                            </button>
+                            <button class="btn">
+                                Decline
+                            </button>
+                        </div>
+                    </div>
+                    <div class="request">
+                        <div class="info">
+                            <div class="profile-photo">
+                                <img src="">
+                            </div>
+                            <div>
+                                <h5></h5>
+                                <p class="text-muted">5 mutual friends</p>
+                            </div>
+                        </div>
+                        <div class="action">
+                            <button class="btn btn-primary">
+                                Accept
+                            </button>
+                            <button class="btn">
+                                Decline
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!----------------- END OF RIGHT -------------------->
+        </div>
+    </main>
+
+    <!----------------- THEME CUSTOMIZATION -------------------->
+    <div class="customize-theme">
+        <div class="card">
+            <h2>Customize your view</h2>
+            <p class="text-muted">Manage your font size, color, and background</p>
+
+            <!----------- FONT SIZE ----------->
+            <div class="font-size">
+                <h4>Font Size</h4>
+                <div>
+                    <h6>Aa</h6>
+                    <div class="choose-size">
+                        <span class="font-size-1"></span>
+                        <span class="font-size-2 active"></span>
+                        <span class="font-size-3"></span>
+                        <span class="font-size-4"></span>
+                        <span class="font-size-5"></span>
+                    </div>
+                    <h3>Aa</h3>
+                </div>
+            </div>
+
+            <!----------- PRIMARY COLORS ----------->
+            <div class="color">
+                <h4>Color</h4>
+                <div class="choose-color">
+                    <span class="color-1 active"></span>
+                    <span class="color-2"></span>
+                    <span class="color-3"></span>
+                    <span class="color-4"></span>
+                    <span class="color-5"></span>
+                </div>
+            </div>
+
+            <!----------- BACKGROUND COLORS ----------->
+            <div class="background">
+                <h4>Background</h4>
+                <div class="choose-bg">
+                    <div class="bg-1 active">
+                        <span></span>
+                        <h5 for="bg-1">Light</h5>
+                    </div>
+                    <div class="bg-2">
+                        <span></span>
+                        <h5 for="bg-2">Dim</h5>
+                    </div>
+                    <div class="bg-3">
+                        <span></span>
+                        <h5 for="bg-3">Dark</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Slick JS -->
-  
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
-
-    <!-- For Carousel -->
-        
-    <script type="text/javascript">
-        $('.one-time').slick({
-            dots: true,
-            infinite: true,
-            speed: 300,
-            slidesToShow: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            nextArrow: $('.next'),
-            prevArrow: $('.prev'),
-        });     
-    </script>
+    <script src="./index.js"></script>
 </body>
 </html>
