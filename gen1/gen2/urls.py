@@ -10,4 +10,5 @@ urlpatterns = [
     path('quiz',views.quiz),
     path('community',views.community),
     path('posts',views.posting),
+    path('experiance',views.experiance),
 ]

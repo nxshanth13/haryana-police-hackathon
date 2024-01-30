@@ -96,3 +96,6 @@ def posting(request):
                 return render(request, 'community.html', {'posts': data,"user":user})
 def quiz(request):
        return render(request,'quiz.html')
+
+def experiance(request):
+       return render(request,'experiances.html')

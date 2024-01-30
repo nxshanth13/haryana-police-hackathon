@@ -23,9 +23,8 @@
                 <input type="search" placeholder="Search for creators, inspirations, and projects">
             </div>
             <div class="create">
-                <label class="btn btn-primary" for="create-post">Create Post</label>
                 <div class="profile-photo">
-                    <img src="./images/profile-1.jpg" alt="">
+                    <img src="./images/profile-1.jpg" alt="" style="opacity: 0;">
                 </div>
             </div>
         </div>
@@ -36,25 +35,26 @@
         <div class="container">
             <!----------------- LEFT -------------------->
             <div class="left">
+                {% if user %}
                 <a class="profile">
                     <div class="profile-photo">
                         <img src="./images/profile-1.jpg">
                     </div>
                     <div class="handle">
-                        <h4>USER 1</h4>
+                        <h4>{{userid}}</h4>
                         <p class="text-muted">
                             @username
                         </p>
                     </div>
                 </a>
-
+                {% endif %} 
                 <!----------------- SIDEBAR -------------------->
                 <div class="sidebar">
-                    <a class="menu-item active">
+                    <a class="menu-item" href="/home">
                         <span><i class="uil uil-home"></i></span>
                         <h3>Home</h3>   
                     </a>
-                    <a class="menu-item">
+                    <a class="menu-item" href="/podcast">
                         <span><i class="uil uil-compass"></i></span>
                         <h3>Podcast</h3>
                     </a>
@@ -124,15 +124,11 @@
                         <span><i class="uil uil-envelope-alt"><small class="notification-count">6</small></i></span>
                         <h3>Messages</h3>
                     </a>
-                    <a class="menu-item">
+                    <a class="menu-item" href="/quiz">
                         <span><i class="uil uil-bookmark"></i></span>
                         <h3>Quiz page</h3>
                     </a>
-                    <a class="menu-item">
-                        <span><i class="uil uil-chart-line"></i></span>
-                        <h3>Memes</h3>
-                    </a>
-                    <a class="menu-item">
+                    <a class="menu-item" href="/events">
                         <span><i class="uil uil-chart-line"></i></span>
                         <h3>Upcoming Events</h3>
                     </a>
@@ -149,46 +145,6 @@
 
             <!----------------- MIDDLE -------------------->
             <div class="middle">
-                 <!----------------- STORIES -------------------->
-                <div class="stories">
-                    <div class="story">
-                        <div class="profile-photo">
-                            <img src="./images/profile-8.jpg">
-                        </div>
-                        <p class="name">Your Story</p>
-                    </div>
-                    <div class="story">
-                        <div class="profile-photo">
-                            <img src="./images/profile-9.jpg">
-                        </div>
-                        <p class="name">Lila James</p>
-                    </div>
-                    <div class="story">
-                        <div class="profile-photo">
-                            <img src="./images/profile-10.jpg">
-                        </div>
-                        <p class="name">Winnie Haley</p>
-                    </div>
-                    <div class="story">
-                        <div class="profile-photo">
-                            <img src="./images/profile-11.jpg">
-                        </div>
-                        <p class="name">Daniel Bale</p>
-                    </div>
-                    <div class="story">
-                        <div class="profile-photo">
-                            <img src="./images/profile-12.jpg">
-                        </div>
-                        <p class="name">Jane Doe</p>
-                    </div>
-                    <div class="story">
-                        <div class="profile-photo">
-                            <img src="./images/profile-13.jpg">
-                        </div>
-                        <p class="name">Tina White</p>
-                    </div>
-                </div>
-                <!----------------- END OF STORIES -------------------->
                 {% if user %}
                 <form action="posts" class="create-post" method='post' enctype='multipart/form-data'>
                     {% csrf_token %}
@@ -240,20 +196,9 @@
                             </div>
                         </div>
 
-                        <div class="liked-by">
-                            <span><img src="./images/profile-10.jpg"></span>
-                            <span><img src="./images/profile-4.jpg"></span>
-                            <span><img src="./images/profile-15.jpg"></span>
-                            <p>Liked by <b>Ernest Achiever</b> and <b>2, 323 others</b></p>
-                        </div>
-
                         <div class="caption">
                             <p><b>{{pos.uploader}}</b> {{pos.desc}} 
                             <span class="harsh-tag">#lifestyle</span></p>
-                        </div>
-
-                        <div class="comments text-muted">
-                            View all 277 comments
                         </div>
                     
                       </div>

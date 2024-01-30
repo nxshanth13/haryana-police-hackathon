@@ -1,0 +1,273 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/experiance.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Mynerve&family=Poppins:wght@100;200;300;500&family=Plus+Jakarta+Sans:wght@300&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+        a{
+            text-decoration: none;
+            color: rgb(228, 26, 77);
+        }
+        body {
+            background-color: #d0f1bfb3;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* align-items: center; */
+            min-height: 100vh;
+            background-size: cover;
+            padding: 40px 120px;
+            position: relative;
+        }
+        .options-container h1{
+            font-size: 5rem;
+            margin: 20px 0;
+            font-weight: 600;
+            margin-top: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: -webkit-linear-gradient(0deg, #D3315A, #00ADA9, #7D5F91, #EA872C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .options-container .grid-container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            margin-top: 30px;
+            width: 100%;
+            position: relative;
+        }
+        .options-container .grid-container .grid-item{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #6d809337;
+            box-shadow: 1px 1px 4px 0px rgba(255, 255, 255, 0.25);
+            background: linear-gradient(97deg, rgba(229, 212, 196, 0.50) 49.55%, rgba(179, 203, 217, 0.50) 100.33%);
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        .options-container .grid-container .grid-item:hover{
+            transform: scale(1.05);
+            box-shadow: 1px 1px 4px 0px rgba(255, 255, 255, 0.25);
+        }
+        .options-container .grid-container .grid-item a{
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 10px;
+            font-family: "Black Ops One", cursive;
+            background: -webkit-linear-gradient(0deg, #D3315A, #00ADA9, #7D5F91, #EA872C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-attachment: fixed;
+        }
+        .options-container .grid-container .grid-item p{
+            font-size: 1rem;
+            font-weight: 500;
+            margin-top: 10px;
+            color: #4c4c4c9a;
+            font-weight: 600;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        @media screen and (max-width: 768px){
+            .options-container{
+                padding: 40px 20px;
+            }
+            .options-container h1{
+                font-size: 4rem;
+            }
+            .options-container .grid-container{
+                grid-template-columns: repeat(1, 1fr);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="whole_container" style="position: relative;">
+        <nav class="navbar">
+           <h1>GENZ BODHI</h1>
+            <div class="mid">
+                <h3 class="hype"><a href="/home">HOME</a></h3>
+                <h3 class="hype">MISSION</h3>
+                <h3 class="hype">EXPLORE</h3>
+                <h3 class="hype">CONTACT US</h3>
+            </div>
+        </nav>
+        <div class="banner" style="width: 100%;height: 55vh;position: relative;">
+            <img src="{% static 'images/bg11.jpg' %}" alt="" style="height: 100%;width: 100%;object-fit: cover;">
+            <div class="filter" style="position: absolute;background-color: rgba(0, 0, 0, 0.25);width: 100%;height: 100%;top:0;"></div>
+            <h1 style="position: absolute;top: 40%;right: 36%;color: white;font-weight: 600;font-size: 35px;">Enter Into the New Realm!</h1>
+            <h4 style="position: absolute;top: 54%;right: 40%;color: white;font-weight: 400;">Discover Things you may never know</h4>
+        </div>
+        <button style="margin: 0 auto;height: 40px;width: 120px;margin: 30px 0;">Next blog ></button>
+        <hr style="width: 90%;margin: 0 auto;"><br>
+        <div class="blog_main">
+            <div class="blog_left">
+                <img src="{% static 'images/emily.jpeg' %}" alt="1">
+                <hr>
+                <h4>Emily Turner</h4>
+            </div>
+            <div class="blog_sep"></div>
+            <div class="blog_right">
+                <h1>Breaking Free: A Journey from <br> Perfectionism and Addiction to Self-Love and Sobriety</h1>
+                <hr style="margin: 15px 0;">
+                <p>Beneath the surface, however, I always felt a lot of pressure to be perfect.
+
+                    I was the first of 12 grandchildren, and this led to me feeling that I had to be the best at everything I did, which gave me terrible anxiety from the early age of 5.
+                    
+                    When I was 15, the perfect little world I thought I was living in was shattered into a million pieces; my mom informed me that she and my dad had decided to get divorced.
+                    
+                    A court order meant that we all lived under the same roof for the next year, until the divorce was finalized.
+                    
+                    During my junior year of high school, I switched to a public school for the first time. I had no idea where I belonged and felt lost, as though I had no control over anything around me.
+                    
+                    The only thing I could control in my life was food. I began restricting my eating and later realized that this was the beginning of my battle with an eating disorder.
+                    
+                    I’d always stayed away from using recreational drugs and drinking alcohol for fear that it would interfere with school and extracurricular activities. Even though my friends all drank, I was adamant that it wasn’t for me. <br><br>
+                    
+                    Everything changed one New Year’s Eve, when I finally had my first drink. I do not remember much from that night except being violently sick through the night and into the next morning.
+                    
+                    I absolutely hated the way alcohol tasted, but it took me out of myself and the chaos around me in that moment. I started to drink more frequently and, as a result, my grades began to plummet.
+                    
+                    I was skipping school and getting into trouble at home. My mom had no idea what to do with me.
+                    
+                    Toward the end of the year, my final paper for my English class was due, and I was struggling to finish it on time. A girl in my class offered me one of her Adderall pills and told me that it would help.
+                    
+                    
+                    ‘I was starting to look sick’
+                    I had no idea what Adderall was or what it was used for; I just knew that I needed to finish my paper or I would not pass the class — so I took it. Little did I know at the time how big an impact that decision would have on my life.
+                    
+                    I stayed up all night writing that paper and went into school the next day having not slept. I was still fuelled by the Adderall that I had taken and felt completely out of my mind. I was talking too fast and too much, I couldn’t sit still, my anxiety was through the roof, and my entire body hurt. <br><br>
+                    
+                    When I woke up the next morning, I was exhausted and very depressed. So I asked my friend for another Adderall.
+                    
+                    This quickly became my daily routine, and within just a couple of weeks, I was buying them from other students as I realized just how many of my classmates were also abusing the “study pills.”
+                    
+                    Buying them was becoming too expensive at the rate I was taking them, so I knew I had to find another source.
+                    
+                    In time, I managed to convince a doctor that I had attention deficit hyperactivity disorder, and they prescribed me Adderall. I had even told myself that because this was a prescription medication, it was fine. How wrong I was.
+                    
+                    At first, I thought it had solved all of my problems in life — but that quickly changed. I would take so many that I would be up for days at a time trying to make everything “just perfect,” only to completely crash for days after, falling into a deep depression.
+                    
+                    This cycle continued for months. It became clear to everybody around me that I had a problem.
+                    
+                    I was not sleeping or eating. I was 5 feet 7 inches and had dropped down to just 95 pounds. I was starting to look sick. My brain was completely fried due to the lack of sleep, and because my assignments no longer made any sense, my grades plummeted. <br><br>
+                    
+                    My life was a shambles, and I was on the verge of not being able to graduate high school. I knew that I needed help, but I didn’t know how to ask for it. I had lost all of my friends and pushed my entire family away.
+                    
+                    My anxiety and depression were unbearable, and I just didn’t want to go on. I was in complete despair, lost in the world, and lost in my addiction.
+                    
+                    ‘Be kind to yourself’
+                    When I was 17, I attempted to take my own life; I couldn’t see any other way out. I thank God every day that I survived and got a new lease of life. I entered an outpatient dual diagnosis treatment center that summer, where I learned about addiction and began to heal.
+                    
+                    Through the support of AA and everyone around me, I could start to put my life back together as a young person in sobriety. I could not have done this without the strong women of AA who took me in and loved me until I could love myself.
+                    
+                    I began working with a sponsor, who took me through the 12 steps of the program. Through prayer and meditation, I found that I was able to move forward.
+                    
+                    “In time, my addiction — and the anxiety and depression that I had been fighting my entire life — was lifted. I finally felt happy and healthy in mind, body, and spirit for the first time in my life.”
+                    
+                    That following school year, I was able to finish my senior year of high school and was accepted into college. I went on to earn my bachelors in Elementary Education and have been teaching first grade for 6 years now, all in sobriety.
+                    
+                    I do not want to say that any of it was easy, especially getting sober at such a young age, but it was all so worth it. <br><br>
+                    
+                    My passion in life now is to help others — especially teenagers struggling with addiction issues — and to show them that there is another way. Self-love and -acceptance have been key for me; I learned to stop putting so much pressure on myself and comparing myself with others.
+                    
+                    It is so important to be kind to ourselves, and although we all fall short sometimes, being able to pick ourselves up and move forward is what defines who we are and ultimately what makes us stronger.
+                    
+                    The only thing you need to strive for is to be a better you each day.</p>
+            </div>
+        </div>
+
+        <div class="waves">
+        </div>
+        <footer style="width: 100%;">
+            <div class="footer-container">
+              <div class="col">
+                <img src="{% static 'images/logo.jpeg' %}" alt="logo" class="footlogo" />
+              </div>
+        
+              <div class="footer-side-col">
+                <div class="col">
+                  <h3>
+                    Location
+                    <div class="underline"><span></span></div>
+                  </h3>
+                  <p>India la dhan</p>
+                  <p class="email-id"><a href="mailto:suk00n794@gmail.com">temp@gmail.com</a></p>
+                </div>
+        
+                <div class="col">
+                  <h3>Links</h3>
+                  <ul>
+                    <li><a href="">About Us</a></li>
+                    <li>
+                      <a href="">Privacy Policy</a>
+                    </li>
+                  </ul>
+                </div>
+        
+                <div class="col">
+                  <h3>
+                    Social
+                    <div class="underline"><span></span></div>
+                  </h3>
+                  <div class="social-menu">
+                    <ul>
+                      <a href="https://twitter.com/Suk00n9" target="_blank">
+                        <li id="social-twitter"><i class="fab fa-2x fa-twitter"></i></li>
+                      </a>
+                      <a href="https://github.com/AnkitArya0" target="_blank">
+                        <li id="social-github"><i class="fab fa-2x fa-github"></i></li>
+                      </a>
+                      <a href="https://www.linkedin.com/in/sukoon-9-4b8aa9278/" target="_blank">
+                        <li id="social-linkedin"><i class="fab fa-2x fa-linkedin-in"></i></li>
+                      </a>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Slick JS -->
+  
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
+    <!-- For Carousel -->
+        
+    <script type="text/javascript">
+        $('.one-time').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            nextArrow: $('.next'),
+            prevArrow: $('.prev'),
+        });     
+    </script>
+</body>
+</html>

@@ -14,6 +14,7 @@
     <title>Document</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Mynerve&family=Poppins:wght@100;200&display=swap');
 
         a{
             text-decoration: none;
@@ -92,6 +93,7 @@
             font-weight: 600;
             text-align: justify;
             text-justify: inter-word;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         @media screen and (max-width: 768px){
@@ -106,6 +108,22 @@
             }
             
         }
+
+        .quote{
+            background-color: rgba(255, 255, 255, 0.773);
+            margin-top: 70px;
+            width: 80%;
+            height: 110px;
+            border-radius: 35px;
+
+        }
+        .para{
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding-top: 35px;
+            font-size: 30px;
+        }
+
     </style>
 </head>
 <body>
@@ -135,6 +153,10 @@
             </div>
             <!-- <i class="fa-solid fa-arrow-left prev"></i>
             <i class="fa-solid fa-arrow-right next"></i> -->
+        </div>
+        <!-- <img src="https://static.thenounproject.com/png/4789441-200.png" alt="no"> -->
+        <div class="quote">
+            <p class="para">"Drugs don't add life, they subtract it. Choose a high on life, not substances"</p>
         </div>
         {%if not user %}
         <div class="links">
@@ -274,8 +296,8 @@
             <div class="grid-container">
                 <div class="grid-item">
                     <img src="https://www.shutterstock.com/shutterstock/photos/2178722083/display_1500/stock-vector-colorful-retro-podcast-background-illustration-2178722083.jpg" />
-                    <a href="/podcast">Podcast</a>
-                    <p>Listen to us</p>
+                    <a href="/podcast">AudioHarmony</a>
+                    <p> Your hub for music, podcasts, and audiobooks. Dive into a world of audio delights! #SoundSphere</p>
                 </div>
                 <!-- <div class="grid-item">
                     <img src="{% static 'images/image.png' %}" />
@@ -284,8 +306,8 @@
                 </div> -->
                 <div class="grid-item">
                     <img src="https://img.freepik.com/free-vector/hand-drawn-question-mark-pattern_23-2149416651.jpg?w=740&t=st=1706514873~exp=1706515473~hmac=17a2fcc30f2642d77d798f9c880f1809cbdca184ba1947efa58519e165dbbd83" />
-                    <a href="/quiz">Quiz</a>
-                    <p>Win competitions!</p>
+                    <a href="/quiz">Competition</a>
+                    <p>Unleash your creativity in our exciting competition! #CompetitionTime</p>
                 </div>
                 <!-- <div class="grid-item">
                     <img src="{% static 'images/image.png' %}" />
@@ -294,19 +316,19 @@
                 </div> -->
                 <div class="grid-item">
                     <img src="{% static 'images/image.png' %}" />
-                    <a href="/community">Community Hub</a>
-                    <p>Building Bridges, Creating Bonds – Detox Dash Community Hub, Your Space to Thrive!</p>
+                    <a href="./community">Meme Hub</a>
+                    <p>Share the laughs! Upload your memes and enjoy a daily dose of humor on our meme-sharing platform. #MemeMagic</p>
                 </div>
                 <div class="grid-item">
                     <img src="https://media.istockphoto.com/id/499517325/photo/a-man-speaking-at-a-business-conference.jpg?s=612x612&w=0&k=20&c=gWTTDs_Hl6AEGOunoQ2LsjrcTJkknf9G8BGqsywyEtE=" />
                     <a href="/events">Events</a>
-                    <p>Stay Informed, Stay Empowered – Explore the latest updates and notifications!</p>
+                    <p>Unlock unforgettable experiences - explore and join our dynamic events lineup! #EventHub</p>
                 </div>
-                <!-- <div class="grid-item">
-                    <img src="{% static 'images/image.png' %}" />
-                    <a href="./dutyassign">Duty Assign</a>
-                    <p>Shape Your Community – Assign user roles in to empower and uplift the community.</p>
-                </div> -->
+                <div class="grid-item">
+                    <img src="{% static 'images/exp.jpeg' %}" />
+                    <a href="/experiance">Experiances</a>
+                    <p>Explore the profound transformations that occur when individuals choose a path to recovery.#BeforeFreedom</p>
+                </div>
             </div>
         </div>
         <div class="container" id="contact">
@@ -407,41 +429,7 @@
             autoplaySpeed: 2000,
             nextArrow: $('.next'),
             prevArrow: $('.prev'),
-        });
-        // $('.cont__blog').slick({
-        // dots: true,
-        // slidesToShow: 3,
-        // slidesToScroll: 1,
-        // autoplay: true,
-        // autoplaySpeed: 2000,
-        // nextArrow: $('.next'),
-        // prevArrow: $('.prev'),
-        // responsive: [
-        //     {
-        //     breakpoint: 1124,
-        //     settings: {
-        //         slidesToShow: 3,
-        //         slidesToScroll: 3,
-        //         infinite: true,
-        //         dots: true
-        //     }
-        //     },
-        //     {
-        //     breakpoint: 900,
-        //     settings: {
-        //         slidesToShow: 2,
-        //         slidesToScroll: 2
-        //     }
-        //     },
-        //     {
-        //     breakpoint: 480,
-        //     settings: {
-        //         slidesToShow: 1,
-        //         slidesToScroll: 1
-        //     }
-        //     }
-        // ]
-        // });      
+        });   
     </script>
 </body>
 </html>
