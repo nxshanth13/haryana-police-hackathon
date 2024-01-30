@@ -4,6 +4,6 @@ from .models import *
 class UserDataAdmin(admin.ModelAdmin):
   list_display=('name','email','password')
 class postsAdmin(admin.ModelAdmin):
-  list_display=('uploader','location','time','file','desc','comments')
+  list_display=('uploaderemail','uploader','location','time','file','desc','comments')
 admin.site.register(UserData,UserDataAdmin)
 admin.site.register(posts,postsAdmin)

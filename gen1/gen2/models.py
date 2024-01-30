@@ -7,6 +7,7 @@ class UserData(models.Model):
   password=models.CharField(max_length=2080)
 
 class posts(models.Model):
+  uploaderemail=models.EmailField(default="abc@gmail.com")
   uploader=models.CharField(max_length=2080)
   location=models.CharField(max_length=2080)
   time=models.TimeField()

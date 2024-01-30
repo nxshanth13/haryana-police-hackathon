@@ -189,17 +189,22 @@
                     </div>
                 </div>
                 <!----------------- END OF STORIES -------------------->
-                <form action="" class="create-post">
+                {% if user %}
+                <form action="posts" class="create-post" method='post' enctype='multipart/form-data'>
+                    {% csrf_token %}
                     <div class="profile-photo">
                         <img src="./images/profile-1.jpg">
                     </div>
-                    <input type="text" placeholder="What's on your mind, Diana ?" id="create-post">
+                    <input name="desc" type="text" placeholder="What's on your mind, {{userid}} ?" id="create-post">
                     <label for="upload-file" style="padding-right: 10px;cursor: pointer;">
                         <i class="fa-solid fa-upload"></i>
                     </label>
-                    <input type="file" id="upload-file" style="display: none;">
-                    <input type="submit" value="Post" class="btn btn-primary">
+                    <input type="file" name="file" id="upload-file" style="display:none">
+                    <button class="btn btn-primary">Post</button>
                 </form>
+                {% else %}
+                <div>Please login to create a post</div>
+                {% endif %}
                 <!----------------- FEEDS -------------------->
                 <div class="feeds">
                     <!----------------- FEED 1 -------------------->

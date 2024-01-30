@@ -8,5 +8,6 @@ urlpatterns = [
     path('podcast',views.music),
     path('events',views.events),
     path('quiz',views.quiz),
-    path('community',views.community)
+    path('community',views.community),
+    path('posts',views.posting),
 ]
