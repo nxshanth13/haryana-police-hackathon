@@ -273,7 +273,9 @@ hr {
   color: white;
 }
 .container h2{
-  color:rgb(98, 181, 65);
+  color:rgba(255, 255, 255, 0.5);
+  font-size: large;
+  font-weight: 300;
 }
 .container,
 #podcasts > .collection {

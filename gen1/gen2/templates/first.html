@@ -43,6 +43,7 @@
             background: -webkit-linear-gradient(0deg, #D3315A, #00ADA9, #7D5F91, #EA872C);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-align: center;
         }
         .options-container .grid-container{
             display: grid;
@@ -110,18 +111,46 @@
         }
 
         .quote{
-            background-color: rgba(255, 255, 255, 0.773);
             margin-top: 70px;
             width: 80%;
-            height: 110px;
-            border-radius: 35px;
-
+            height: auto;
+            margin-bottom: 50px;
+        }
+        .quote h1{
+            position: relative;
+            overflow: visible;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .quote h1:after{
+            content: '';
+            bottom: 0;
+            position: absolute;
+            left: 43%;
+            height: 3px;
+            width: 15%;
+            background-color: black;
         }
         .para{
             text-align: center;
+            text-align: left;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            padding-top: 35px;
-            font-size: 30px;
+            padding-top: 5px;
+            font-size: 20px;
+            margin-top: 7px;
+            word-spacing: 3px;
+            line-height: 135%;
+            font-size: 20px;
+        }
+        .com{
+            font-size: 5rem;
+            margin: 20px 0;
+            font-weight: 600;
+            margin-top: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: -webkit-linear-gradient(0deg, #D3315A, #00ADA9, #7D5F91, #EA872C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
     </style>
@@ -159,7 +188,8 @@
         </div>
         <!-- <img src="https://static.thenounproject.com/png/4789441-200.png" alt="no"> -->
         <div class="quote">
-            <p class="para">"Drugs don't add life, they subtract it. Choose a high on life, not substances"</p>
+            <h1 class="us">About Us</h1>
+            <p class="para">GenZ Bodhi is dedicated to empowering the youth of Bharat, fostering positive change through innovative solutions and impactful communication strategies. They celebrate diversity with artistic and sports events, engage through problem-focused podcasts, and connect on social media platforms. Through induction programs and dynamic content like memes, quizzes, and events, they inspire active participation in building a brighter future for Bharat. Join GenZ Bodhi in transforming Bharat! <b>JAI HIND!</b> 🚀🎨</p>
         </div>
         {%if not user %}
         <div class="links">
@@ -296,6 +326,9 @@
             <img src="{% static 'images/glimps.jpeg' %}" alt="" style="mix-blend-mode: multiply;margin-top: 20px;">
         </div>
         <div class="options-container" id="explore">
+            <div>
+                <h1>EXPLORE</h1>
+            </div>
             <div class="grid-container">
                 <div class="grid-item">
                     <img src="https://www.shutterstock.com/shutterstock/photos/2178722083/display_1500/stock-vector-colorful-retro-podcast-background-illustration-2178722083.jpg" />
@@ -369,9 +402,7 @@
 
         <!-- community start -->
 
-        <h1 style="margin-top: 20px;">Our Community</h1>
-        <hr>
-        <hr>
+        <h1 class="com" style="margin-top: 20px;">OUR COMMUNITY</h1>
         <br><br>
         <div class="flex-container" id="community">
             <div class="box">
