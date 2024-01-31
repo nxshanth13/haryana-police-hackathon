@@ -99,3 +99,6 @@ def quiz(request):
 
 def experiance(request):
        return render(request,'experiances.html')
+
+def competitions(request):
+       return render(request,'competitions.html')

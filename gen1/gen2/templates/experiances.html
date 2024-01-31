@@ -100,6 +100,12 @@
             }
             
         }
+
+        .banbutt:hover{
+          transition: 1s;
+          background-color: white;
+          color: black;
+        }
     </style>
 </head>
 <body>
@@ -113,19 +119,20 @@
                 <h3 class="hype">CONTACT US</h3>
             </div>
         </nav>
-        <div class="banner" style="width: 100%;height: 55vh;position: relative;">
+        <div class="banner" style="width: 100%;height: 55vh;position: relative;margin-bottom: 30px;">
             <img src="{% static 'images/bg11.jpg' %}" alt="" style="height: 100%;width: 100%;object-fit: cover;">
             <div class="filter" style="position: absolute;background-color: rgba(0, 0, 0, 0.25);width: 100%;height: 100%;top:0;"></div>
             <h1 style="position: absolute;top: 40%;right: 36%;color: white;font-weight: 600;font-size: 35px;">Enter Into the New Realm!</h1>
             <h4 style="position: absolute;top: 54%;right: 40%;color: white;font-weight: 400;">Discover Things you may never know</h4>
+            <button class="banbutt" style="cursor: pointer;margin: 0 auto;height: 40px;width: 120px;margin: 30px 0;position: absolute;right: 46%;top: 60%;border-radius: 20px;background-color: white;color: black;font-weight: 500;z-index: 100;border: none;">Next blog ></button>
+
         </div>
-        <button style="margin: 0 auto;height: 40px;width: 120px;margin: 30px 0;">Next blog ></button>
-        <hr style="width: 90%;margin: 0 auto;"><br>
         <div class="blog_main">
-            <div class="blog_left">
+            <div class="blog_left" style="position: relative;">
                 <img src="{% static 'images/emily.jpeg' %}" alt="1">
-                <hr>
+                <div class="backrect"></div>
                 <h4>Emily Turner</h4>
+                <p style="text-align: center;">This was one of my darkest times.</p>
             </div>
             <div class="blog_sep"></div>
             <div class="blog_right">

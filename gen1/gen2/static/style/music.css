@@ -63,13 +63,13 @@ html{
 }
 
 body {
-  background-color: black;
+  background-color: #212d2d;
   font-family: "Inter", sans-serif;
-  color: white;
+  color: black;
 }
 
 header {
-  background-image: url('https://images.unsplash.com/photo-1610041321327-b794c052db27?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+  background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   min-height: 100vh;
   width: 100%;
   position: relative;
@@ -82,7 +82,7 @@ section {
 }
 
 nav {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   display: inline-flex;
@@ -90,7 +90,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(5px);
 }
 
@@ -232,14 +231,15 @@ h1 {
   text-align: center;
   margin-bottom: 1.5rem;
   font-weight: 900;
+  color: rgba(255, 255, 255, 1);
 }
 
 .heading-span {
-  color: cyan;
+  color: rgb(228, 26, 77);
 }
 
 #subtitle {
-  color: #adb5bd;
+  color: rgba(255, 255, 255, 0.568);
   text-align: center;
   font-size: 1.3rem;
 }

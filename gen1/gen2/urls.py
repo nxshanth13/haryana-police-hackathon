@@ -11,4 +11,5 @@ urlpatterns = [
     path('community',views.community),
     path('posts',views.posting),
     path('experiance',views.experiance),
+    path('competitions',views.competitions),
 ]

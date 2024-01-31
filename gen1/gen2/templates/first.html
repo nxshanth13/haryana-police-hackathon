@@ -18,7 +18,7 @@
 
         a{
             text-decoration: none;
-            color: rgb(228, 26, 77);
+            color: rgb(0, 0, 0);
         }
         body {
             background-color: #d0f1bfb3;
@@ -129,11 +129,14 @@
 <body>
     <div class="whole_container" style="position: relative;">
         <nav class="navbar">
-            <h1>GENZ BODHI</h1>
+            <div class="lefty" style="display: flex;align-items: center;justify-content: center;column-gap: 20px;">
+                <img src="{% static 'images/logo.jpeg' %}" alt="" style="height: 60px;width: 60px;">
+                <h1>GENZ BODHI</h1>
+            </div>
             <div class="mid">
-                <h3 class="hype">MISSION</h3>
-                <h3 class="hype">EXPLORE</h3>
-                <h3 class="hype"><a href="#contact">CONTACT US</a></h3>
+                <h3 class="hype"><a href="#explore">EXPLORE</a></h3>
+                <h3 class="hype"><a href="#community">COMMUNITY</a></h3>
+                <a href="call.html" id="bookcall">Book a Call</a>
             </div>
         </nav>
         <div class="slider">
@@ -292,7 +295,7 @@
         <div class="cont">
             <img src="{% static 'images/glimps.jpeg' %}" alt="" style="mix-blend-mode: multiply;margin-top: 20px;">
         </div>
-        <div class="options-container">
+        <div class="options-container" id="explore">
             <div class="grid-container">
                 <div class="grid-item">
                     <img src="https://www.shutterstock.com/shutterstock/photos/2178722083/display_1500/stock-vector-colorful-retro-podcast-background-illustration-2178722083.jpg" />
@@ -306,7 +309,7 @@
                 </div> -->
                 <div class="grid-item">
                     <img src="https://img.freepik.com/free-vector/hand-drawn-question-mark-pattern_23-2149416651.jpg?w=740&t=st=1706514873~exp=1706515473~hmac=17a2fcc30f2642d77d798f9c880f1809cbdca184ba1947efa58519e165dbbd83" />
-                    <a href="/quiz">Competition</a>
+                    <a href="/competitions">Competition</a>
                     <p>Unleash your creativity in our exciting competition! #CompetitionTime</p>
                 </div>
                 <!-- <div class="grid-item">
@@ -331,7 +334,10 @@
                 </div>
             </div>
         </div>
-        <div class="container" id="contact">
+
+        <!-- contact section -->
+
+        <!-- <div class="container" id="contact">
             <div class="card">
                 <div class="left">
                 <img src="{% static 'images/contact.png' %}" style="mix-blend-mode: multiply; object-fit: contain;height: 100%;width: 100%;">
@@ -359,7 +365,63 @@
                 </div>
                 </div>
             </div>
+        </div> -->
+
+        <!-- community start -->
+
+        <h1 style="margin-top: 20px;">Our Community</h1>
+        <hr>
+        <hr>
+        <br><br>
+        <div class="flex-container" id="community">
+            <div class="box">
+                <img src="https://bhubaneswarcuttackpolice.gov.in/wp-content/uploads/2022/07/3-1.jpg" alt="Photo 1">
+                <h4 class="h4">Recovery Rise: Building a Drug-Free Community</h4>
+                <p class="here"> Unity for Addiction-Free Tomorrow.</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+                <p class="count">8,236 Registered</p>
+                <button class="reg">Join Now!</button>
+            </div>
+
+            <div class="box">
+                <img src="https://static.toiimg.com/thumb/msid-61090380,width-400,resizemode-4/61090380.jpg"
+                    alt="Photo 1">
+                <h4 class="h4">Unchained: Together Against Substance Abuse</h4>
+                <p class="here">Unity Against Substance Abuse Together.</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 10%;"></div>
+                </div>
+                <p class="count">1,753 Registered</p>
+                <button class="reg">Join Now!</button>
+            </div>
+
+            <div class="box">
+                <img src="https://thehillstimes.in/wp-content/uploads/2023/05/Anti-drug-campaign-organised.jpeg"
+                    alt="Photo 1">
+                <h4 class="h4">PhoenixUnity: Rising from the Ashes of Addiction</h4>
+                <p class="here">Soaring Beyond Addiction's Ashes.</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+                <p class="count">9,546 Registered</p>
+                <button class="reg">Join Now!</button>
+            </div>
+
+            <div class="box">
+                <img src="https://imgnew.outlookindia.com/uploadimage/library/16_9/16_9_5/IMAGE_1687772569.webp"
+                    alt="Photo 1">
+                <h4 class="h4">Pulse of Positivity: A Community Without Drugs</h4>
+                <p class="here">A caring community promoting recovery.</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 40%;"></div>
+                </div>
+                <p class="count">3,987 Registered </p>
+                <button class="reg">Join Now!</button>
+            </div>
         </div>
+        <br>
         <div class="waves">
         </div>
         <footer style="width: 100%;">
@@ -431,5 +493,22 @@
             prevArrow: $('.prev'),
         });   
     </script>
+
+    <!-- for chatbot -->
+
+    <script type="text/javascript">
+        (function (d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function () {
+                window.voiceflow.chat.load({
+                    verify: { projectID: '65b8a01caf9962c75637b122' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production'
+                });
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+    </script>
+
 </body>
 </html>

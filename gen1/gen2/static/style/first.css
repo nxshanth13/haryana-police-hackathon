@@ -5,6 +5,9 @@
     font-family: 'Poppins';
     font-weight: 500;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 ::-webkit-scrollbar{
   background: white;
@@ -26,6 +29,20 @@ body{
     width: 100vw;
     overflow-x: hidden;
 }
+.whole_container::before {    
+  content: "";
+  background-image: url("/static/images/pattern.png");
+  background-size:auto;
+  background-repeat: repeat;
+  z-index: -100;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: auto;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.07;
+}
 
 .whole_container{
     display: flex;
@@ -41,10 +58,9 @@ body{
     justify-content: space-between;
     padding: 0 120px;
     height: 9vh;
-    position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(5px);
     background-image: url("https://pledge.mygov.in/fightagainstdrugabuse/assets/images/cloud-bg.png");
     margin-bottom: 10px;
@@ -190,9 +206,9 @@ body{
 .hype , .hype a{
   display: inline-block;
   position: relative;
-  color: rgb(228, 26, 77);
+  color: rgb(0, 0, 0);
   cursor: pointer;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -635,3 +651,149 @@ footer{
     display: flex;
     flex-direction: column;
   }
+
+
+  /* community start  */
+
+
+  .flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.box {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    border: 2px;
+    margin: 14px;
+    background: #ffffffb5;
+    border-radius: 12px;
+    box-shadow: 1px 1px 4px 0px rgba(255, 255, 255, 0.25);
+    display: flex;
+    flex-direction: column;
+}
+
+.box img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+
+
+}
+
+.here {
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+h4 {
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.progress {
+    height: 100%;
+    background-color: rgb(228, 26, 77);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+    cursor: pointer;
+}
+
+hr {
+    width: 10%;
+    border: 1px solid black;
+    cursor: pointer;
+
+}
+
+.count {
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin-top: 4px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.reg {
+    margin-top: 15px;
+    background-color: rgb(228, 26, 77);
+    border: none;
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    border-radius: 18px;
+
+}
+
+#bookcall {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #1a1a1a;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #3b3b3b;
+    cursor: pointer;
+    display: inline-block;
+    font-family:
+        Roobert,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    min-width: 0;
+    outline: none;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    will-change: transform;
+}
+
+#bookcall:disabled {
+    pointer-events: none;
+}
+
+#bookcall:hover {
+    color: #fff;
+    background-color: #1a1a1a;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+#bookcall:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
